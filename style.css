@@ -11,14 +11,28 @@ body {
 }
 
 .clock-container {
-    background: #1a50ce;
-    padding: 40px 40px;
-    border-radius: 40px;
+    background: #20232a;
+    /* Use percentage for width to fit small screens */
+    width: 80%; 
+    max-width: 400px; /* Stops it from getting too big on desktop */
+    padding: 20px;
+    border-radius: 10px;
     box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    text-align: center; /* Ensures text stays centered */
 }
 
 #clock {
-    font-size: 100px;
+    /* "vw" means viewport width. Text scales with the screen width */
+    font-size: 15vw; 
     font-weight: bold;
-    letter-spacing: 5px;
+    letter-spacing: 2px;
+}
+
+/* Media Query for Desktop/Tablets */
+/* When screen is larger than 600px, lock the size */
+@media (min-width: 600px) {
+    #clock {
+        font-size: 60px; /* Fixed size for larger screens */
+        letter-spacing: 5px;
+    }
 }
